@@ -142,80 +142,79 @@
 //}
 
 
-#include<stdio.h>
-#include<stdlib.h>
-typedef struct LinkList
-{
-	int elem;
-	struct LinkList* next;
-}LinkList;
+//#include<stdio.h>
+//#include<stdlib.h>
+//typedef struct LinkList
+//{
+//	int elem;
+//	struct LinkList* next;
+//}LinkList;
+//
+//void display_list(LinkList* head_node)
+//{
+//	LinkList* temp = head_node;
+//	while (temp->next)
+//	{
+//		temp = temp->next;
+//		printf("%d ", temp->elem);
+//	}
+//	printf("\n");
+//}
+//
+//LinkList* init_LinkList()
+//{
+//	LinkList* head_node = (LinkList*)malloc(sizeof(LinkList));//头结点
+//	LinkList* temp = head_node;
+//	for (int i = 1; i <= 5; i++)
+//	{
+//		LinkList* a = (LinkList*)malloc(sizeof(LinkList));
+//		a->elem = i;
+//		a->next = NULL;
+//		temp->next = a;
+//		temp = temp->next;
+//	}
+//	printf("已创建链表:\n");
+//	display_list(head_node);
+//	return head_node;
+//}
+//
+//
+//
+//LinkList* insert_list(LinkList* head_node, int elem, int position)
+//{
+//	LinkList* temp = head_node;
+//	LinkList* node = NULL;
+//	int i = 0;
+//	for (i = 1; i < position; i++)
+//	{
+//		if (temp == NULL)
+//		{
+//			printf("插入位置有误\n");
+//			return head_node;
+//		}
+//		temp = temp->next;
+//	}
+//
+//	//创建插入结点
+//	node = (LinkList*)malloc(sizeof(LinkList));
+//	node->elem = elem;
+//	node->next = temp->next;
+//	temp->next = node;
+//	display_list(head_node);
+//	return head_node;
+//}
 
-void display_list(LinkList* head_node)
-{
-	LinkList* temp = head_node;
-	while (temp->next)
-	{
-		temp = temp->next;
-		printf("%d ", temp->elem);
-	}
-	printf("\n");
-}
 
-LinkList* init_LinkList()
-{
-	LinkList* head_node = (LinkList*)malloc(sizeof(LinkList));//头结点
-	LinkList* temp = head_node;
-	for (int i = 1; i <= 5; i++)
-	{
-		LinkList* a = (LinkList*)malloc(sizeof(LinkList));
-		a->elem = i;
-		a->next = NULL;
-		temp->next = a;
-		temp = temp->next;
-	}
-	printf("已创建链表:\n");
-	display_list(head_node);
-	return head_node;
-}
-
-
-
-LinkList* insert_list(LinkList* head_node, int elem, int position)
-{
-	LinkList* temp = head_node;
-	LinkList* node = NULL;
-	int i = 0;
-	for (i = 1; i < position; i++)
-	{
-		if (temp == NULL)
-		{
-			printf("插入位置有误\n");
-			return head_node;
-		}
-		temp = temp->next;
-	}
-
-	//创建插入结点
-	node = (LinkList*)malloc(sizeof(LinkList));
-	node->elem = elem;
-	node->next = temp->next;
-	temp->next = node;
-	display_list(head_node);
-	return head_node;
-}
-
-
+#include <stdio.h>
 int main()
 {
-	LinkList* head_node = NULL;
-	head_node = init_LinkList();
-	for (int i = 0; i < 5; i++)
-	{
-		int elem = 0;
-		int position = 0;
-		printf("请输入要插入的元素和位置\n");
-		scanf("%d %d", &elem, &position);
-		insert_list(head_node, elem, position);
-	}
-	
+    int i = 1;
+    while (i <= 10)
+    {
+        if (5 == i)
+            continue;
+        printf("%d ", i);
+        i++;
+    }
+    return 0;
 }
