@@ -123,12 +123,20 @@ void TestMergeSortNonR()
 	MergeSortNonR(arr, sz);
 	PrintArray(arr, sz);
 }
+void TestCountSort()
+{
+	int arr[] = { 10,6,7,1,3,9,4,2,5,3 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	CountSort(arr, sz);
+	PrintArray(arr, sz);
+}
 int main()
 {
 	//TestQuickSort();QuickSortNonR
 	//TestOP();
 	//TestQuickSortNonR();
 	//TestMergeSort();
-	TestMergeSortNonR();
+	//TestMergeSortNonR();
+	TestCountSort();
 	return 0;
 }

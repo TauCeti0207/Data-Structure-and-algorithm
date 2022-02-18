@@ -461,3 +461,40 @@ void MergeSortNonR(int* a, int n)
 	}
 	free(tmp);
 }
+
+void CountSort(int* a, int n)
+{
+	int max = a[0], min = a[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (a[i] > max)
+			max = a[i];
+		if (a[i] < min)
+			min = a[i];
+	}
+	int range = max - min + 1;
+	int* count = (int*)malloc(sizeof(int) * range);
+	if (count == NULL)
+	{
+		printf("malloc fail\n");
+		exit(-1);
+	}
+	//数组初始化为0
+	memset(count, 0, sizeof(int) * range);
+	//统计次数
+	for (int i = 0; i < n; i++)
+	{
+		//相对映射
+		count[a[i] - min]++;
+	}
+	//把数据写回去 count数组里放的是数据出现的次数
+	int i = 0;
+	for (int j = 0; j < range; j++)
+	{
+		while (count[j]--)
+		{
+			a[i++] = j + min;
+		}
+	}
+	free(count);
+}
