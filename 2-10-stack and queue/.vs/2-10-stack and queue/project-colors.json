@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3b99f06f-74a4-4c50-b5d2-6a77036fee90": {
+      "ProjectGuid": "3b99f06f-74a4-4c50-b5d2-6a77036fee90",
+      "DisplayName": "2-10-stack and queue",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

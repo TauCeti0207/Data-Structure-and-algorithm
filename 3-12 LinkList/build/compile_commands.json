@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-12 LinkList/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\LINKLIST.dir\\src\\SLinkList.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-12 LinkList\\src\\SLinkList.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-12 LinkList/src/SLinkList.cpp"
+},
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-12 LinkList/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\LINKLIST.dir\\src\\test.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-12 LinkList\\src\\test.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-12 LinkList/src/test.cpp"
+}
+]
