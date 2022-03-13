@@ -20,3 +20,18 @@ void SListPushFront(SListNode *&pList, SListDataType x);
 
 // void SListPopBack(SListNode** ppList);
 void SListPopBack(SListNode *&pList);
+
+// void SListPopFront(SListNode **ppList);
+void SListPopFront(SListNode *&pList);
+
+SListNode *SListFind(SListNode *plist, SListDataType x);
+
+void SListInserAfter(SListNode *pos, SListDataType x);
+
+// void SListInserBefore(SListNode** ppList, SListNode* pos, SListDataType x);
+void SListInserBefore(SListNode *&pList, SListNode *pos, SListDataType x);
+
+void SListEraseAfter(SListNode *pos);
+
+void SListEraseCur(SListNode *&pList, SListNode *pos);
+// void SListEraseCur(SListNode** ppList, SListNode* pos);
