@@ -35,3 +35,6 @@ void SListEraseAfter(SListNode *pos);
 
 void SListEraseCur(SListNode *&pList, SListNode *pos);
 // void SListEraseCur(SListNode** ppList, SListNode* pos);
+
+// void SListDestroy(SListNode** ppList);
+void SListDestroy(SListNode *&pList);

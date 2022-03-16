@@ -118,7 +118,10 @@ void Test7()
     SListEraseCur(sList, pos1);
     SListPrint(sList);
     SListNode *pos2 = SListFind(sList, 3);
-    SListEraseCur(sList, pos2);
+    if (pos2)
+    {
+        SListEraseCur(sList, pos2);
+    }
     SListPrint(sList);
 }
 int main(int argc, char const *argv[])
@@ -128,3 +131,28 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+// void SListDestroy(SListNode** ppList)
+// {
+//     assert(ppList);
+//     SListNode* cur = *ppList;
+//     while (cur)
+//     {
+//         SListNode* next = cur->next;
+//         free(cur);
+//         cur = next;
+//     }
+//     *ppList = NULL;//结束之后还要让pList指向空
+// }
+
+void SListDestroy(SListNode *&pList)
+{
+    assert(pList);
+    SListNode *cur = pList;
+    while (cur)
+    {
+        SListNode *next = cur->next;
+        free(cur);
+        cur = next;
+    }
+    pList = NULL; //结束之后还要让pList指向空
+}
