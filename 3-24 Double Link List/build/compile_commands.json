@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Double Link List/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\DOUBLELINKLIST.dir\\src\\DoubleLinkList.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-24 Double Link List\\src\\DoubleLinkList.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Double Link List/src/DoubleLinkList.cpp"
+},
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Double Link List/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\DOUBLELINKLIST.dir\\src\\test.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-24 Double Link List\\src\\test.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Double Link List/src/test.cpp"
+}
+]
