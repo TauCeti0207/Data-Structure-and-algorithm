@@ -138,3 +138,62 @@ void ListPopFront(ListNode *pHead)
     pHead->next = first;
     first->prev = pHead;
 }
+
+void ListErase2(ListNode *pos)
+{
+    assert(pos);
+    //提前记录pos的prev
+    ListNode *posPrev = pos->prev;
+    ListNode *next = pos->next;
+    // posPrev pos next
+    //  让pos的prev指向next，next的prev指向pos的prev
+    posPrev->next = next;
+    next->prev = posPrev;
+    free(pos);
+    pos = NULL;
+}
+void ListErase(ListNode *&pos)
+{
+    assert(pos);
+    //提前记录pos的prev
+    ListNode *posPrev = pos->prev;
+    ListNode *next = pos->next;
+    // posPrev pos next
+    //  让pos的prev指向next，next的prev指向pos的prev
+    posPrev->next = next;
+    next->prev = posPrev;
+    free(pos);
+    pos = NULL;
+}
+
+int ListSize(ListNode *pHead)
+{
+    assert(pHead);
+    ListNode *cur = pHead->next;
+    int size = 0;
+    while (cur != pHead)
+    {
+        ++size;
+        cur = cur->next;
+    }
+    return size;
+}
+
+bool ListIsEmpty(ListNode *pHead)
+{
+    assert(pHead);
+    return pHead->next == pHead ? true : false;
+}
+
+void ListDestroy(ListNode *pHead)
+{
+    assert(pHead);
+    ListNode *cur = pHead;
+    while (cur != pHead)
+    {
+        ListNode *next = cur->next;
+        free(cur);
+        cur = NULL;
+        cur = next;
+    }
+}

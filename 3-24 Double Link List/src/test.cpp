@@ -68,9 +68,26 @@ void Test4()
     ListPopFront(pList);
     ListPrint(pList);
 }
+void Test5()
+{
+    ListNode *pList = ListInit();
+    ListPushBack(pList, 1);
+    ListPushBack(pList, 2);
+    ListPushBack(pList, 3);
+    ListPushBack(pList, 4);
+    ListPrint(pList);
+    ListNode *pos = ListFind(pList, 1);
+    if (pos)
+    {
+        ListErase2(pos);
+    }
+    ListPrint(pList);
+    printf("%d\n", ListSize(pList));
+    printf("%d\n", ListIsEmpty(pList));
+}
 int main(int argc, char const *argv[])
 {
-    Test4();
+    Test5();
     system("pause");
     return 0;
 }
