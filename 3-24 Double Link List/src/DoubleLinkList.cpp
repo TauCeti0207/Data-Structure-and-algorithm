@@ -16,7 +16,7 @@ ListNode *CreatListNode(LTDataType x)
 
 // 2种初始化方式
 //要修改哨兵位头结点，因此传二级指针或者传引用
-void ListInit(ListNode *&pHead)
+void ListInit2(ListNode *&pHead)
 {
     assert(pHead);
     pHead = CreatListNode(0);

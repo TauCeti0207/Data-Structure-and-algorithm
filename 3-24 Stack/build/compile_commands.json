@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Stack/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\STACK.dir\\src\\Stack.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-24 Stack\\src\\Stack.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Stack/src/Stack.cpp"
+},
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Stack/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\STACK.dir\\src\\test.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-24 Stack\\src\\test.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-24 Stack/src/test.cpp"
+}
+]

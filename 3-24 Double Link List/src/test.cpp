@@ -88,7 +88,7 @@ void Test5()
 }
 int main(int argc, char const *argv[])
 {
-    Test5();
+    Test4();
     system("pause");
     return 0;
 }

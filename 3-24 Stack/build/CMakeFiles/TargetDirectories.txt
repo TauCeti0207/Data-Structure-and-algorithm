@@ -1,0 +1,3 @@
+D:/code/2022code/Data-Structure-and-algorithm/3-24 Stack/build/CMakeFiles/STACK.dir
+D:/code/2022code/Data-Structure-and-algorithm/3-24 Stack/build/CMakeFiles/edit_cache.dir
+D:/code/2022code/Data-Structure-and-algorithm/3-24 Stack/build/CMakeFiles/rebuild_cache.dir

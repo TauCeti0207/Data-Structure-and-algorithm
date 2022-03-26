@@ -1,0 +1,22 @@
+#pragma once
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <assert.h>
+typedef int STDataType;
+typedef struct Stack
+{
+    STDataType *a;
+    int top;      //栈顶
+    int capacity; //容量,方便增容
+} Stack;
+
+void StackInit(Stack *pSt);
+void StackDestroy(Stack *pSt);
+// 性质决定了只能在栈顶出入数据
+void StackPush(Stack *pSt, STDataType x);
+void StackPop(Stack *pSt);
+// 访问栈顶数据
+STDataType StackTop(Stack *pSt);
+bool StackEmpty(Stack *pSt);
+int StackSize(Stack *pSt);
