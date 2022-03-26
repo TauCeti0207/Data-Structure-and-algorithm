@@ -84,6 +84,7 @@ void Test5()
     ListPrint(pList);
     printf("%d\n", ListSize(pList));
     printf("%d\n", ListIsEmpty(pList));
+    ListDestroy(pList);
 }
 int main(int argc, char const *argv[])
 {

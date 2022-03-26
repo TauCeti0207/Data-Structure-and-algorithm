@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-26 Queue/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\QUEUE.dir\\src\\Queue.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-26 Queue\\src\\Queue.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-26 Queue/src/Queue.cpp"
+},
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-26 Queue/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\QUEUE.dir\\src\\test.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-26 Queue\\src\\test.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-26 Queue/src/test.cpp"
+}
+]

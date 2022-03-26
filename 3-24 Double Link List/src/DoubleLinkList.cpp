@@ -1,25 +1,30 @@
 #include "DoubleLinkList.h"
 ListNode *CreatListNode(LTDataType x)
 {
-    ListNode *node = (ListNode *)malloc(sizeof(ListNode));
-    if (node == NULL)
-    {
-        printf("CreatListNode Fail\n");
-        exit(-1);
-    }
-    node->data = x;
-    node->prev = NULL;
-    node->next = NULL;
-    return node;
+    ListNode *newNode = (ListNode *)malloc(sizeof(ListNode));
+    assert(newNode); //暴力判空
+    // if (node == NULL) //温柔判空
+    // {
+    //     printf("CreatListNode Fail\n");
+    //     exit(-1);
+    // }
+    newNode->data = x;
+    newNode->next = NULL;
+    newNode->prev = NULL;
+    return newNode;
 }
-void ListInit2(ListNode *&pHead)
+
+// 2种初始化方式
+//要修改哨兵位头结点，因此传二级指针或者传引用
+void ListInit(ListNode *&pHead)
 {
-    //要修改哨兵位头结点，因此传二级指针或者传引用
     assert(pHead);
     pHead = CreatListNode(0);
+    //要指向自己
     pHead->next = pHead;
     pHead->prev = pHead;
 }
+
 ListNode *ListInit()
 {
     ListNode *pHead = CreatListNode(0); //任意一个值都行
@@ -28,6 +33,7 @@ ListNode *ListInit()
     pHead->prev = pHead;
     return pHead;
 }
+
 void ListPushBack(ListNode *pHead, LTDataType x)
 {
     assert(pHead);
@@ -142,16 +148,28 @@ void ListPopFront(ListNode *pHead)
 void ListErase2(ListNode *pos)
 {
     assert(pos);
-    //提前记录pos的prev
-    ListNode *posPrev = pos->prev;
-    ListNode *next = pos->next;
     // posPrev pos next
+    ListNode *posPrev = pos->prev, *next = pos->next;
+    free(pos);
+    // pos = NULL; // 其实不起作用，需要在外面再手动置空
     //  让pos的prev指向next，next的prev指向pos的prev
     posPrev->next = next;
     next->prev = posPrev;
-    free(pos);
-    pos = NULL;
 }
+
+// void ListErase2(ListNode *pos)
+// {
+//     assert(pos);
+//     //提前记录pos的prev
+//     ListNode *posPrev = pos->prev;
+//     ListNode *next = pos->next;
+//     // posPrev pos next
+//     //  让pos的prev指向next，next的prev指向pos的prev
+//     posPrev->next = next;
+//     next->prev = posPrev;
+//     free(pos);
+//     pos = NULL;
+// }
 void ListErase(ListNode *&pos)
 {
     assert(pos);
@@ -185,7 +203,7 @@ bool ListIsEmpty(ListNode *pHead)
     return pHead->next == pHead ? true : false;
 }
 
-void ListDestroy(ListNode *pHead)
+void ListDestroy2(ListNode *pHead)
 {
     assert(pHead);
     ListNode *cur = pHead;
@@ -193,7 +211,37 @@ void ListDestroy(ListNode *pHead)
     {
         ListNode *next = cur->next;
         free(cur);
-        cur = NULL;
         cur = next;
     }
+    free(pHead); //链表的摧毁是要连哨兵位都要摧毁的。
+    // pHead = NULL; // 不起作用
+}
+
+//复用Erase，且传引用
+// void ListDestroy(ListNode *&pHead)
+// {
+//     assert(pHead);
+//     ListNode *cur = pHead;
+//     while (cur != pHead)
+//     {
+//         ListNode *next = cur->next;
+//         ListErase(cur);
+//         cur = next;
+//     }
+//     free(pHead);
+//     pHead = NULL;
+// }
+
+void ListDestroy(ListNode *&pHead)
+{
+    assert(pHead);
+    ListNode *cur = pHead;
+    while (cur != pHead)
+    {
+        ListNode *next = cur->next;
+        free(cur);
+        cur = next;
+    }
+    free(pHead);
+    pHead = NULL;
 }

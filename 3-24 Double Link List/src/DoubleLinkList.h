@@ -12,6 +12,7 @@ typedef struct ListNode
 
 ListNode *ListInit();
 void ListInit2(ListNode *&pHead); //第二种初始化方式
+ListNode *CreatListNode(LTDataType x);
 void ListPrint(ListNode *pHead);
 void ListPushBack(ListNode *pHead, LTDataType x);
 void ListPushFront(ListNode *pHead, LTDataType x);
@@ -24,4 +25,5 @@ void ListErase(ListNode *&pos);
 void ListErase2(ListNode *pos);
 bool ListIsEmpty(ListNode *pHead);
 int ListSize(ListNode *pHead);
-void ListDestroy(ListNode *pHead);
+void ListDestroy2(ListNode *pHead);
+void ListDestroy(ListNode *&pHead);

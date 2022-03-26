@@ -1,0 +1,3 @@
+"D:\Program Files (x86)\cmake\cmake-3.22.2-windows-x86_64\bin\cmake.exe" -E rm -f CMakeFiles\QUEUE.dir/objects.a
+D:\PROGRA~1\gcc\mingw64\bin\ar.exe qc CMakeFiles\QUEUE.dir/objects.a @CMakeFiles\QUEUE.dir\objects1.rsp
+D:\PROGRA~1\gcc\mingw64\bin\X86_64~2.EXE -g -Wl,--whole-archive CMakeFiles\QUEUE.dir/objects.a -Wl,--no-whole-archive -o QUEUE.exe -Wl,--out-implib,libQUEUE.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\QUEUE.dir\linklibs.rsp
