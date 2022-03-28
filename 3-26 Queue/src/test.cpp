@@ -14,25 +14,10 @@ void Test1()
         QueuePop(&q); // pop掉之后才能取下一个
     }
     printf("\n");
-    // printf("%d ", QueueFront(&q));
-    // QueuePop(&q);
-    // QueuePush(&q, 3);
-    // QueuePush(&q, 4);
-    // printf("%d ", QueueFront(&q));
-    // QueuePop(&q);
-    // QueuePush(&q, 5);
-
-    // while (!QueueEmpty(&q))
-    // {
-    //     //只能出队头
-    //     printf("%d ", QueueFront(&q));
-    //     QueuePop(&q);
-    // }
-    // printf("\n");
-    // QueueDestroy(&q);
 }
 int main(int argc, char const *argv[])
 {
     Test1();
+    system("pause");
     return 0;
 }
