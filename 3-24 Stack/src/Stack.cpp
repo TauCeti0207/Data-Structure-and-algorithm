@@ -15,6 +15,7 @@ void StackDestroy(Stack *pSt)
 }
 // 性质决定了只能在栈顶出入数据
 // 选top一开始指向0的方式
+
 void StackPush(Stack *pSt, STDataType x)
 {
     assert(pSt);
@@ -33,6 +34,7 @@ void StackPush(Stack *pSt, STDataType x)
     }
     pSt->a[pSt->top++] = x;
 }
+
 void StackPop(Stack *pSt)
 {
     assert(pSt);
@@ -40,6 +42,7 @@ void StackPop(Stack *pSt)
     --pSt->top;
     //只需--top即可，无需将要删除元素置0等无谓操作，只要读取不到就认为删除了。
 }
+
 // 访问栈顶数据
 STDataType StackTop(Stack *pSt)
 {
@@ -47,11 +50,13 @@ STDataType StackTop(Stack *pSt)
     assert(pSt->top > 0);
     return pSt->a[pSt->top - 1];
 }
+
 bool StackEmpty(Stack *pSt)
 {
     assert(pSt);
     return pSt->top == 0;
 }
+
 int StackSize(Stack *pSt)
 {
     assert(pSt);
