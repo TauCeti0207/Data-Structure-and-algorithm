@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\BINARYTREE.dir\\src\\BinaryTree.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-31 Binary Tree\\src\\BinaryTree.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/src/BinaryTree.cpp"
+},
+{
+  "directory": "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/build",
+  "command": "D:\\PROGRA~1\\gcc\\mingw64\\bin\\X86_64~2.EXE   -g -o CMakeFiles\\BINARYTREE.dir\\src\\test.obj -c \"D:\\code\\2022code\\Data-Structure-and-algorithm\\3-31 Binary Tree\\src\\test.cpp\"",
+  "file": "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/src/test.cpp"
+}
+]
