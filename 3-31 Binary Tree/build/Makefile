@@ -144,6 +144,21 @@ src/BinaryTree.s:
 .PHONY : src/BinaryTree.s
 
 # target to build an object file
+src/Heap.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/Heap.obj
+.PHONY : src/Heap.obj
+
+# target to preprocess a source file
+src/Heap.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/Heap.i
+.PHONY : src/Heap.i
+
+# target to generate assembly for a file
+src/Heap.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/Heap.s
+.PHONY : src/Heap.s
+
+# target to build an object file
 src/test.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/test.obj
 .PHONY : src/test.obj
@@ -170,6 +185,9 @@ help:
 	@echo ... src/BinaryTree.obj
 	@echo ... src/BinaryTree.i
 	@echo ... src/BinaryTree.s
+	@echo ... src/Heap.obj
+	@echo ... src/Heap.i
+	@echo ... src/Heap.s
 	@echo ... src/test.obj
 	@echo ... src/test.i
 	@echo ... src/test.s

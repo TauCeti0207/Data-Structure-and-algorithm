@@ -23,6 +23,7 @@ void AdjustUp(HPDataType *a, size_t child)
 {
     size_t parent = (child - 1) / 2;
     while (/* condition */)
+        ;
     {
         // 要保持小堆，父亲必须比孩子小
         if (a[child] < a[parent])
