@@ -22,16 +22,20 @@ void Swap(HPDataType *pa, HPDataType *pb)
 void AdjustUp(HPDataType *a, size_t child)
 {
     size_t parent = (child - 1) / 2;
-    while (/* condition */)
-        ;
+    while (child > 0) // child = 0时结束，
     {
         // 要保持小堆，父亲必须比孩子小
         if (a[child] < a[parent])
+        // if (a[child] > a[parent])  // 变成大堆了
         {
             Swap(&a[child], &a[parent]);
             // 迭代
             child = parent;
             parent = (child - 1) / 2;
+        }
+        else
+        {
+            break; //满足小堆时就break
         }
     }
 }
@@ -52,7 +56,97 @@ void HeapPush(HP *php, HPDataType x)
         php->capacity = newCapacity;
     }
     php->a[php->size++] = x;
-    // 插完之后考虑向上调整
+    // 插完之后考虑向上调整，保持小堆
     AdjustUp(php->a, php->size - 1); // 最后一个元素的坐标
 }
-void HeapPop(HP *php);
+
+// 1.找左右孩子小的那个
+// 2.和父亲比较，比父亲小就交换
+// 3.继续向下调整
+// void AdjustDown(HPDataType *a, size_t size, size_t root)
+// {
+//     assert(a);
+//     size_t parent = root;
+//     size_t leftChild = parent * 2 + 1, rightChild = parent * 2 + 2;
+//     // 注意右孩子不一定存在
+//     while (rightChild < size && leftChild < size && parent < size)
+//     {
+//         // 选出左右孩子小的那个
+//         size_t minChild = a[leftChild] < a[rightChild] ? leftChild : rightChild;
+//         if (a[minChild] < a[parent])
+//         {
+//             // 孩子小于父亲才交换
+//             Swap(&a[minChild], &a[parent]);
+//             // 迭代
+//             parent = minChild;
+//             leftChild = parent * 2 + 1;
+//             rightChild = parent * 2 + 2;
+//         }
+//         else
+//         {
+//             break;
+//         }
+//     }
+// }
+
+// 1.找左右孩子小的那个
+// 2.和父亲比较，比父亲小就交换
+// 3.继续向下调整
+void AdjustDown(HPDataType *a, size_t size, size_t root)
+{
+    assert(a);
+    size_t parent = root;
+    size_t child = parent * 2 + 1;
+    while (child < size)
+    {
+        // 选出左右孩子小的一个，注意考虑右孩子不存在的情况
+        if (child + 1 < size && a[child + 1] < a[child])
+        {
+            ++child;
+        }
+        // 孩子小于父亲才交换
+        if (a[child] < a[parent])
+        {
+            Swap(&a[child], &a[parent]);
+            parent = child;
+            child = parent * 2 + 1;
+        }
+        else
+        {
+            break;
+        }
+    }
+}
+
+// 删除之后依旧保持堆的性质，删除堆顶的数据（最小/最大）
+// 思路一：数组的数据挪动，
+// 效率低，O（N）；堆结构破坏，父子间关系乱了。
+// 思路二：交换首尾数据，--size，然后向下调整，复杂度是完全二叉树高度 log2*N
+void HeapPop(HP *php)
+{
+    assert(php);
+    assert(php->size > 0);
+    Swap(&php->a[0], &php->a[php->size - 1]);
+    --php->size;
+    AdjustDown(php->a, php->size, 0); // 从根开始调
+}
+
+void HeapPrint(HP *php)
+{
+    assert(php);
+    int num = 0;
+    int levelSize = 1; // 第一层1个数，第二个2个数。。。
+    for (size_t i = 0; i < php->size; i++)
+    {
+        printf("%d ", php->a[i]);
+        ++num;
+        if (num == levelSize)
+        {
+            printf("\n");
+            levelSize *= 2;
+            num = 0;
+        }
+    }
+    printf("\n");
+    printf("\n");
+}

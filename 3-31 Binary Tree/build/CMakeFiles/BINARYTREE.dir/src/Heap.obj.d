@@ -1,6 +1,6 @@
-CMakeFiles/BINARYTREE.dir/src/test.obj: \
- D:\code\2022code\Data-Structure-and-algorithm\3-31\ Binary\ Tree\src\test.cpp \
- D:\code\2022code\Data-Structure-and-algorithm\3-31\ Binary\ Tree\src\BinaryTree.h \
+CMakeFiles/BINARYTREE.dir/src/Heap.obj: \
+ D:\code\2022code\Data-Structure-and-algorithm\3-31\ Binary\ Tree\src\Heap.cpp \
+ D:\code\2022code\Data-Structure-and-algorithm\3-31\ Binary\ Tree\src\Heap.h \
  d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\stdio.h \
  d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
  d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\corecrt.h \
@@ -29,5 +29,4 @@ CMakeFiles/BINARYTREE.dir/src/test.obj: \
  d:\progra~1\gcc\mingw64\lib\gcc\x86_64-w64-mingw32\11.2.0\include\mm_malloc.h \
  d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\errno.h \
  d:\progra~1\gcc\mingw64\include\c++\11.2.0\bits\std_abs.h \
- D:\code\2022code\Data-Structure-and-algorithm\3-31\ Binary\ Tree\src\Heap.h \
  d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\assert.h

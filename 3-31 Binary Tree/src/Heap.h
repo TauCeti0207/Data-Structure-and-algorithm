@@ -16,3 +16,4 @@ void HeapInit(HP* php);
 void HeapDestroy(HP* php);
 void HeapPush(HP* php, HPDataType x);
 void HeapPop(HP* php);
+void HeapPrint(HP* php);
