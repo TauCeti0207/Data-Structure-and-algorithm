@@ -19,6 +19,8 @@ void Swap(HPDataType *pa, HPDataType *pb)
     *pa = *pb;
     *pb = tmp;
 }
+
+// 为了保持小堆
 void AdjustUp(HPDataType *a, size_t child)
 {
     size_t parent = (child - 1) / 2;
@@ -26,7 +28,7 @@ void AdjustUp(HPDataType *a, size_t child)
     {
         // 要保持小堆，父亲必须比孩子小
         if (a[child] < a[parent])
-        // if (a[child] > a[parent])  // 变成大堆了
+        // if (a[child] > a[parent])  // 大堆
         {
             Swap(&a[child], &a[parent]);
             // 迭代
@@ -41,7 +43,7 @@ void AdjustUp(HPDataType *a, size_t child)
 }
 
 // 假设一开始是小堆
-// 插入之后要尽可能不影响堆，还要保持堆的性质，因此尾插最好，头插不可取
+// 插入之后要尽可能不影响堆，还要保持堆的性质，因此尾插最好，头插不可取。
 // 如果有影响，只会影响他的祖先节点，因此需要和祖先节点依次比较。
 void HeapPush(HP *php, HPDataType x)
 {
@@ -56,6 +58,7 @@ void HeapPush(HP *php, HPDataType x)
         php->capacity = newCapacity;
     }
     php->a[php->size++] = x;
+
     // 插完之后考虑向上调整，保持小堆
     AdjustUp(php->a, php->size - 1); // 最后一个元素的坐标
 }
@@ -100,12 +103,15 @@ void AdjustDown(HPDataType *a, size_t size, size_t root)
     while (child < size)
     {
         // 选出左右孩子小的一个，注意考虑右孩子不存在的情况
+        // 大堆就要选出大的那个
         if (child + 1 < size && a[child + 1] < a[child])
+        // if (child + 1 < size && a[child + 1] > a[child])
         {
             ++child;
         }
-        // 孩子小于父亲才交换
+        // 孩子小于父亲才交换，并继续往下调整
         if (a[child] < a[parent])
+        // if (a[child] > a[parent])  // 大堆
         {
             Swap(&a[child], &a[parent]);
             parent = child;
@@ -149,4 +155,21 @@ void HeapPrint(HP *php)
     }
     printf("\n");
     printf("\n");
+}
+
+bool HeapEmpty(HP *php)
+{
+    assert(php);
+    return php->size == 0;
+}
+size_t HeapSize(HP *php)
+{
+    assert(php);
+    return php->size;
+}
+HPDataType HeapTop(HP *php)
+{
+    assert(php);
+    assert(php->size > 0);
+    return php->a[0];
 }

@@ -29,4 +29,5 @@ CMakeFiles/BINARYTREE.dir/src/Heap.obj: \
  d:\progra~1\gcc\mingw64\lib\gcc\x86_64-w64-mingw32\11.2.0\include\mm_malloc.h \
  d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\errno.h \
  d:\progra~1\gcc\mingw64\include\c++\11.2.0\bits\std_abs.h \
- d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\assert.h
+ d:\progra~1\gcc\mingw64\x86_64-w64-mingw32\include\assert.h \
+ d:\progra~1\gcc\mingw64\lib\gcc\x86_64-w64-mingw32\11.2.0\include\stdbool.h
