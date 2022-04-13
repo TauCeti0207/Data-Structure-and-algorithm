@@ -21,3 +21,6 @@ void HeapPrint(HP *php);
 bool HeapEmpty(HP *php);
 size_t HeapSize(HP *php);
 HPDataType HeapTop(HP *php);
+
+void AdjustDown(HPDataType *a, size_t size, size_t root);
+void AdjustUp(HPDataType *a, size_t child);
