@@ -33,14 +33,15 @@ void HeapSort1(int *a, int size)
     // 时间复杂度O(N*logN)
     for (int i = 0; i < size; i++)
     {
-        HeapPush(&hp, a[i]); // 先把数据全部push进去
+        HeapPush(&hp, a[i]); // 先把数据全部push进去  默认是小堆
     }
+
     size_t j = 0;
     // 依次取堆顶数据，放到数组里
     // 时间复杂度O(N*logN)
     while (!HeapEmpty(&hp))
     {
-        a[j++] = HeapTop(&hp);
+        a[j++] = HeapTop(&hp); // 默认是小堆，堆顶数据是最小的
         HeapPop(&hp);
     }
 }
@@ -60,7 +61,6 @@ void HeapSort2(int *a, int size)
     {
         AdjustUp(a, i);
     }
-
 }
 
 void HeapSort3(int *a, int size)
@@ -72,13 +72,24 @@ void HeapSort3(int *a, int size)
     {
         AdjustDown(a, size, i);
     }
+
+    size_t end = size - 1;
+    while (end > 0)
+    {
+        Swap(&a[0], &a[end]);
+        AdjustDown(a, end, 0);
+        --end;
+    }
 }
+
 // 注意向上调整和向下调整建出来的堆其实不一样
 // AdjustDown(a, size, i);  0 2 1 6 5 4 7 8
 // AdjustUp(a, i);  0 4 1 6 5 7 2 8
+
+// 建大堆：8 6 7 4 5 1 0 2
 void TestHeapSort()
 {
-    int a[] = {4, 2, 7, 8, 5, 1, 0, 6};
+    int a[] = {2, 6, 7, 4, 5, 1, 0, 8};
     HeapSort3(a, sizeof(a) / sizeof(int));
     for (int i = 0; i < sizeof(a) / sizeof(int); ++i)
     {
@@ -86,13 +97,77 @@ void TestHeapSort()
     }
     printf("\n");
 }
+
+// TopK问题
+// 找最大的K个，建小堆
+void PrintTopK(int *a, int n, int k)
+{
+    // 1. 建堆，用a中前k个数建堆
+    int *KminHeap = (int *)malloc(sizeof(int) * k);
+    assert(KminHeap);
+    for (size_t i = 0; i < k; i++)
+    {
+        KminHeap[i] = a[i];
+    }
+    // 建小堆
+    for (int j = (k - 1 - 1) / 2; j >= 0; --j)
+    {
+        AdjustDown(KminHeap, k, j);
+    }
+
+    // 将剩下的n-k个元素依次与堆顶元素比较
+    for (int i = k; i < n; ++i)
+    {
+        if (a[i] > KminHeap[0]) // 只要比10个中最小那个大就替换进去。
+        {
+            KminHeap[0] = a[i];
+            AdjustDown(KminHeap, k, 0); // 从根开始向下调整
+        }
+    }
+
+    for (size_t i = 0; i < k; i++)
+    {
+        printf("%d ", KminHeap[i]);
+    }
+    printf("\n");
+
+    // 找到最大的前10个后，再排序一波
+    HeapSort3(KminHeap, 10);
+    for (size_t i = 0; i < k; i++)
+    {
+        printf("%d ", KminHeap[i]);
+    }
+    printf("\n");
+}
+
+void TestTopK()
+{
+    int n = 10000;
+    int *a = (int *)malloc(sizeof(int) * n);
+    srand(time(0));
+    for (size_t i = 0; i < n; i++)
+    {
+        a[i] = rand() % 1000000; // 保证随机数都<1000000
+    }
+    // 用来验证找的10个最大的数是否正确。
+    a[5] = 1000000 + 1;
+    a[1231] = 1000000 + 2;
+    a[523] = 1000000 + 3;
+    a[223] = 1000000 + 4;
+    a[4545] = 1000000 + 5;
+    a[999] = 1000000 + 6;
+    a[87] = 1000000 + 7;
+    a[993] = 1000000 + 8;
+    a[528] = 1000000 + 9;
+    a[53] = 1000000 + 10;
+    PrintTopK(a, n, 10); // 找最大的前10个
+}
+
 int main(int argc, char const *argv[])
 {
     // TestHeap1();
-    TestHeapSort();
+    // TestHeapSort();
+    TestTopK();
     system("pause");
     return 0;
 }
-// //
-// 
-// ss

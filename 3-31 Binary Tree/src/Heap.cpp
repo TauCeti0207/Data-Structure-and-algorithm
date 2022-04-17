@@ -104,14 +104,14 @@ void AdjustDown(HPDataType *a, size_t size, size_t root)
     {
         // 选出左右孩子小的一个，注意考虑右孩子不存在的情况
         // 大堆就要选出大的那个
-        if (child + 1 < size && a[child + 1] < a[child])
-        // if (child + 1 < size && a[child + 1] > a[child])
+        if (child + 1 < size && a[child + 1] < a[child]) // 小堆
+        // if (child + 1 < size && a[child + 1] > a[child]) // 大堆
         {
             ++child;
         }
         // 孩子小于父亲才交换，并继续往下调整
-        if (a[child] < a[parent])
-        // if (a[child] > a[parent])  // 大堆
+        if (a[child] < a[parent]) // 小堆
+        // if (a[child] > a[parent]) // 大堆
         {
             Swap(&a[child], &a[parent]);
             parent = child;

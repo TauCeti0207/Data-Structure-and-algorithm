@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <stdbool.h>
+#include <time.h>
 typedef int HPDataType;
 // 底层其实就是数组实现
 typedef struct Heap
