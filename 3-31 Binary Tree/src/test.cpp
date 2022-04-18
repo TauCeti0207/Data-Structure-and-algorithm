@@ -163,11 +163,83 @@ void TestTopK()
     PrintTopK(a, n, 10); // 找最大的前10个
 }
 
+int count = 0; // 定义的全局变量
+void TestBinaryTree()
+{
+    BTNode *tree = CreatBinaryTree();
+    PrevOrder(tree);
+    printf("\n");
+    InOrder(tree);
+    printf("\n");
+    PostOrder(tree);
+    printf("\n");
+
+    BTreeSize2(tree);
+    printf("Size: %d", count);
+    printf("\n");
+
+    BTreeSize2(tree);
+    printf("Size: %d", count);
+    printf("\n");
+}
+
+void TestBinaryTree2()
+{
+    BTNode *tree = CreatBinaryTree();
+    printf("%d\n", BTreeSize3(tree));
+    printf("%d\n", BTreeSize3(tree));
+
+    count = 0;
+    BTreeSize2(tree);
+    printf("Size: %d", count);
+    printf("\n");
+
+    count = 0;
+    BTreeSize2(tree);
+    printf("Size: %d", count);
+    printf("\n");
+
+    count = 0;
+    BTreeSize2(tree);
+    printf("Size: %d", count);
+    printf("\n");
+}
+
+void TestBinaryTree3()
+{
+    BTNode *tree = CreatBinaryTree();
+    int count4 = 0;
+    BTreeSize4(tree, &count4);
+    printf("Size: %d\n", count4);
+    int count5 = 0;
+    BTreeSize4(tree, &count5);
+    printf("Size: %d\n", count5);
+}
+
+void TestBinaryTree4()
+{
+    BTNode *tree = CreatBinaryTree();
+    printf("Size: %d\n", BTreeSize5(tree));
+    printf("Size: %d\n", BTreeSize5(tree));
+    printf("Size: %d\n", BTreeSize5(tree));
+}
+
+void TestBinaryTree5()
+{
+    BTNode *tree = CreatBinaryTree();
+    int count5 = 0;
+    BTreeLeafSize1(tree, &count5);
+    printf("LeafSize: %d\n", count5); // 3个叶子节点
+    printf("LeafSize: %d\n", BTreeLeafSize2(tree));
+    printf("KLevelSize: %d\n", BTreeKLevelSize(tree, 3));
+    printf("BTreeDepthSize: %d\n", BTreeDepth(tree));
+}
 int main(int argc, char const *argv[])
 {
     // TestHeap1();
     // TestHeapSort();
-    TestTopK();
+    // TestTopK();
+    TestBinaryTree5();
     system("pause");
     return 0;
 }
