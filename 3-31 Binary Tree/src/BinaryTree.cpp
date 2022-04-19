@@ -173,3 +173,22 @@ int BTreeDepth(BTNode *root)
     int rightDepth = BTreeDepth(root->right);
     return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
 }
+
+// 二叉树查找值为x的结点
+// 用前序去找
+// 注意要拿到递归的返回值
+BTNode* BTreeFind(BTNode* root, BTDataType x)
+{
+    if(root == NULL)
+        return NULL;
+    if(root->data == x)
+        return root;
+    BTNode* lRet = BTreeFind(root->left, x);
+    if(lRet)
+        return lRet;
+    BTNode* rRet = BTreeFind(root->right, x);
+    if(rRet)
+        return rRet;
+    // 左右子树都没有，返回空
+    return NULL;
+}

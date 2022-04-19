@@ -31,3 +31,5 @@ int BTreeLeafSize2(BTNode *root);
 int BTreeKLevelSize(BTNode *root, int k);
 
 int BTreeDepth(BTNode *root);
+
+BTNode* BTreeFind(BTNode* root, BTDataType x);

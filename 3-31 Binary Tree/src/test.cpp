@@ -234,12 +234,29 @@ void TestBinaryTree5()
     printf("KLevelSize: %d\n", BTreeKLevelSize(tree, 3));
     printf("BTreeDepthSize: %d\n", BTreeDepth(tree));
 }
+void TestBinaryTree6()
+{
+    BTNode *tree = CreatBinaryTree();
+    for (int i = 1; i <= 7; ++i)
+    {
+        printf("Find:%d, %p\n", i, BTreeFind(tree, i)); // 7是找不到的，返回NULL
+    }
+    PrevOrder(tree);
+    printf("\n");
+    BTNode *ret = BTreeFind(tree, 5);
+    if (ret)
+    {
+        ret->data = 50;
+    }
+    PrevOrder(tree);
+    printf("\n");
+}
 int main(int argc, char const *argv[])
 {
     // TestHeap1();
     // TestHeapSort();
     // TestTopK();
-    TestBinaryTree5();
+    TestBinaryTree6();
     system("pause");
     return 0;
 }
