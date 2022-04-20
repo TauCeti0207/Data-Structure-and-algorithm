@@ -250,6 +250,9 @@ void TestBinaryTree6()
     }
     PrevOrder(tree);
     printf("\n");
+
+    BTreeDestroy(tree);
+    tree = NULL; // 注意调用者手动置空
 }
 int main(int argc, char const *argv[])
 {

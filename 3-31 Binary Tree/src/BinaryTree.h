@@ -33,3 +33,5 @@ int BTreeKLevelSize(BTNode *root, int k);
 int BTreeDepth(BTNode *root);
 
 BTNode* BTreeFind(BTNode* root, BTDataType x);
+
+void BTreeDestroy(BTNode *root);

@@ -177,18 +177,33 @@ int BTreeDepth(BTNode *root)
 // 二叉树查找值为x的结点
 // 用前序去找
 // 注意要拿到递归的返回值
-BTNode* BTreeFind(BTNode* root, BTDataType x)
+BTNode *BTreeFind(BTNode *root, BTDataType x)
 {
-    if(root == NULL)
+    if (root == NULL)
         return NULL;
-    if(root->data == x)
+    if (root->data == x)
         return root;
-    BTNode* lRet = BTreeFind(root->left, x);
-    if(lRet)
+    BTNode *lRet = BTreeFind(root->left, x);
+    if (lRet)
         return lRet;
-    BTNode* rRet = BTreeFind(root->right, x);
-    if(rRet)
+    BTNode *rRet = BTreeFind(root->right, x);
+    if (rRet)
         return rRet;
     // 左右子树都没有，返回空
     return NULL;
 }
+
+// 一开始不能先干掉根，不然就找不到左右子树了
+//一般选择一级指针，为了保持接口一致性,使用者要注意置空
+void BTreeDestroy(BTNode *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    BTreeDestroy(root->left);
+    BTreeDestroy(root->right);
+    free(root);
+}
+//或者C++中使用引用来解决
+// void BTreeDestroy(BTNode*& root)
