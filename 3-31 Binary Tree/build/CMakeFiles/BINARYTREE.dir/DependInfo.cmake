@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/src/BinaryTree.cpp" "CMakeFiles/BINARYTREE.dir/src/BinaryTree.obj" "gcc" "CMakeFiles/BINARYTREE.dir/src/BinaryTree.obj.d"
   "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/src/Heap.cpp" "CMakeFiles/BINARYTREE.dir/src/Heap.obj" "gcc" "CMakeFiles/BINARYTREE.dir/src/Heap.obj.d"
+  "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/src/Queue.cpp" "CMakeFiles/BINARYTREE.dir/src/Queue.obj" "gcc" "CMakeFiles/BINARYTREE.dir/src/Queue.obj.d"
   "D:/code/2022code/Data-Structure-and-algorithm/3-31 Binary Tree/src/test.cpp" "CMakeFiles/BINARYTREE.dir/src/test.obj" "gcc" "CMakeFiles/BINARYTREE.dir/src/test.obj.d"
   )
 

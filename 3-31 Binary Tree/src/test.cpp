@@ -1,5 +1,6 @@
 #include "BinaryTree.h"
 #include "Heap.h"
+#include "Queue.h"
 
 void TestHeap1()
 {
@@ -254,12 +255,47 @@ void TestBinaryTree6()
     BTreeDestroy(tree);
     tree = NULL; // 注意调用者手动置空
 }
+
+// 层序遍历
+void LevelOrder(BTNode *root)
+{
+    Queue q;
+    QueueInit(&q);
+    if(root) // root 不为空才往里面插入数据
+    {
+        QueuePush(&q, root);
+    }
+
+    while(!QueueEmpty(&q))
+    {
+        // 先把根pop出来
+        BTNode* front = QueueFront(&q);
+        QueuePop(&q); // 只是把结点指针pop出去，没有销毁结点。
+        printf("%d ", front->data);
+
+        // 把根的左右结点带进去
+        if(front->left)
+        {
+            QueuePush(&q, front->left);
+        }
+        if(front->right)
+        {
+            QueuePush(&q, front->right);
+        }
+    }
+
+    printf("\n");
+
+    QueueDestroy(&q);
+}
+
 int main(int argc, char const *argv[])
 {
     // TestHeap1();
     // TestHeapSort();
     // TestTopK();
-    TestBinaryTree6();
+    BTNode *tree = CreatBinaryTree();
+    LevelOrder(tree);
     system("pause");
     return 0;
 }

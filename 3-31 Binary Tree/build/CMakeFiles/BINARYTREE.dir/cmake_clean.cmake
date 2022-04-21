@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/BINARYTREE.dir/src/BinaryTree.obj.d"
   "CMakeFiles/BINARYTREE.dir/src/Heap.obj"
   "CMakeFiles/BINARYTREE.dir/src/Heap.obj.d"
+  "CMakeFiles/BINARYTREE.dir/src/Queue.obj"
+  "CMakeFiles/BINARYTREE.dir/src/Queue.obj.d"
   "CMakeFiles/BINARYTREE.dir/src/test.obj"
   "CMakeFiles/BINARYTREE.dir/src/test.obj.d"
   "libBINARYTREE.dll.a"

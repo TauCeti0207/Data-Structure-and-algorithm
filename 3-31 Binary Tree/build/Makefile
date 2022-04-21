@@ -159,6 +159,21 @@ src/Heap.s:
 .PHONY : src/Heap.s
 
 # target to build an object file
+src/Queue.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/Queue.obj
+.PHONY : src/Queue.obj
+
+# target to preprocess a source file
+src/Queue.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/Queue.i
+.PHONY : src/Queue.i
+
+# target to generate assembly for a file
+src/Queue.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/Queue.s
+.PHONY : src/Queue.s
+
+# target to build an object file
 src/test.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BINARYTREE.dir\build.make CMakeFiles/BINARYTREE.dir/src/test.obj
 .PHONY : src/test.obj
@@ -188,6 +203,9 @@ help:
 	@echo ... src/Heap.obj
 	@echo ... src/Heap.i
 	@echo ... src/Heap.s
+	@echo ... src/Queue.obj
+	@echo ... src/Queue.i
+	@echo ... src/Queue.s
 	@echo ... src/test.obj
 	@echo ... src/test.i
 	@echo ... src/test.s
