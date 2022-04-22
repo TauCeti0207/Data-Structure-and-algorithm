@@ -261,24 +261,24 @@ void LevelOrder(BTNode *root)
 {
     Queue q;
     QueueInit(&q);
-    if(root) // root 不为空才往里面插入数据
+    if (root) // root 不为空才往里面插入数据
     {
         QueuePush(&q, root);
     }
 
-    while(!QueueEmpty(&q))
+    while (!QueueEmpty(&q))
     {
         // 先把根pop出来
-        BTNode* front = QueueFront(&q);
+        BTNode *front = QueueFront(&q);
         QueuePop(&q); // 只是把结点指针pop出去，没有销毁结点。
         printf("%d ", front->data);
 
         // 把根的左右结点带进去
-        if(front->left)
+        if (front->left)
         {
             QueuePush(&q, front->left);
         }
-        if(front->right)
+        if (front->right)
         {
             QueuePush(&q, front->right);
         }
@@ -289,13 +289,66 @@ void LevelOrder(BTNode *root)
     QueueDestroy(&q);
 }
 
+bool BTreeComplete(BTNode *root)
+{
+    Queue q;
+    QueueInit(&q);
+
+    // 先入根
+    if (root)
+    {
+        QueuePush(&q, root);
+    }
+
+    //出一个带进去2个
+    while (!QueueEmpty(&q))
+    {
+        // 先取队头数据，然后Pop
+        BTNode *front = QueueFront(&q);
+        QueuePop(&q);
+
+        // 如果是空，就break，然后再判断空之后是否全为空
+        if (front == NULL)
+        {
+            break;
+        }
+
+        // 不管是否为空都把左右结点入进去，这也才能保证某一次QueueFront取到的结点为空才能进一步判断
+        QueuePush(&q, front->left);
+        QueuePush(&q, front->right);
+    }
+
+    // 判断第一个空后面是否全为空，如果不完为空则说明不是完全二叉树
+    while (!QueueEmpty(&q))
+    {
+        // 先取队头数据，然后Pop
+        BTNode *front = QueueFront(&q);
+        QueuePop(&q);
+
+        if (front != NULL)
+        {
+            // return之前一定要销毁队列，不然会有内存泄露
+            QueueDestroy(&q);
+            return false;
+        }
+            
+    }
+
+    QueueDestroy(&q);
+
+    // 后面全为空
+    return true;
+}
+
 int main(int argc, char const *argv[])
 {
     // TestHeap1();
     // TestHeapSort();
     // TestTopK();
     BTNode *tree = CreatBinaryTree();
-    LevelOrder(tree);
+
+    // LevelOrder(tree);
+    printf("%d\n", BTreeComplete(tree));
     system("pause");
     return 0;
 }

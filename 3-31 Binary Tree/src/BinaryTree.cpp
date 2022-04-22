@@ -22,6 +22,7 @@ BTNode *CreatBinaryTree()
     // ÊÖ¶¯Á´½Ó
     node1->left = node2;
     node2->left = node3;
+    // node2->right = NULL;
     node1->right = node4;
     node4->left = node5;
     node4->right = node6;
