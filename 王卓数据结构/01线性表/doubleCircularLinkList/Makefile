@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra
 
 # Source file
-SOURCE = linkList.c
+SOURCE = DoublyCircularLinkedList.c
 
 # Extract the target name from the source file name
 TARGET = $(SOURCE:.c=)
@@ -12,8 +12,8 @@ all: $(TARGET)
 
 # Generate executable file
 $(TARGET):
-	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
+	$(CC) $(CFLAGS) -o main $(SOURCE)
 
 # Clean generated files
 clean:
-	del /Q $(TARGET).exe
+	del /Q main.exe

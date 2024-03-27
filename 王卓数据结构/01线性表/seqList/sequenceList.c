@@ -57,7 +57,7 @@ Status InitSL(Sqlist *L, int length)
  * @param e
  * @return Status
  */
-Status GetElem(Sqlist *L, int position, SqlElemType *e)
+Status getLinkListElem(Sqlist *L, int position, SqlElemType *e)
 {
     if (position < 1 || position > L->length)
         return ERROR;
@@ -71,7 +71,7 @@ Status GetElem(Sqlist *L, int position, SqlElemType *e)
  * @param e
  * @return int
  */
-int LocateElem(Sqlist *L, SqlElemType e)
+int locateElement(Sqlist *L, SqlElemType e)
 {
     for (int i = 0; i < L->length; i++)
     {
@@ -149,8 +149,8 @@ void MergeList(Sqlist *La, Sqlist *Lb)
     for (int i = 1; i < Lb->length + 1; i++)
     {
         SqlElemType e;
-        GetElem(Lb, i, &e);
-        if (!LocateElem(La, e))
+        getLinkListElem(Lb, i, &e);
+        if (!locateElement(La, e))
         {
             La->base[La->length++] = e;
         }
@@ -241,7 +241,7 @@ void testMergeSeq()
     free(Lb.base);
     free(Lc.base);
 }
-int main(int argc, char const *argv[])
+int main()
 {
     testMergeSeq();
     return 0;

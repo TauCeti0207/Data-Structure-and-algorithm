@@ -11,8 +11,8 @@ typedef struct __Sqlist
     int length;
 } Sqlist;
 Status InitSL(Sqlist *L, int length);
-Status GetElem(Sqlist *L, int position, SqlElemType *e);
-int LocateElem(Sqlist *L, SqlElemType e);
+Status getLinkListElem(Sqlist *L, int position, SqlElemType *e);
+int locateElement(Sqlist *L, SqlElemType e);
 Status SqlInsert(Sqlist *L, int position, SqlElemType e);
 Status SqlDelete(Sqlist *L, int position, SqlElemType *e);
 Status SqlDestroy(Sqlist *L);

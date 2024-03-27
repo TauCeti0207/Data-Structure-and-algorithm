@@ -10,17 +10,18 @@ typedef struct __LNode
     struct __LNode *next; // 存放下个节点的地址
 } LNode, *LinkList;
 
-Status InitLL(LinkList *L); // 需要改变一级指针的值 传二级指针
-int ListEmpty(LinkList L);
-void CreatLL_H(LinkList L, int n);
-void CreatLL_R(LinkList L, int n);
-Status GetElem(LinkList L, int position, LlElemtype *e);
-LinkList LocateElem(LinkList L, LlElemtype e);
-Status LlInsert(LinkList L, int position, LlElemtype e);
-Status LlDelete(LinkList L, int position, LlElemtype *e);
+Status initLinkList(LinkList *L); // 需要改变一级指针的值 传二级指针
+int isLinklistEmpty(LinkList L);
+Status getLinkListElem(LinkList L, int position, LlElemtype *e);
+LinkList locateElement(LinkList L, LlElemtype e); // 定位元素
+Status insertLinkList(LinkList L, int position, LlElemtype e);
+Status deleteLinkList(LinkList L, int position, LlElemtype *e);
+void printLinkList(LinkList L);
+void createLinkList_Head(LinkList *L, int n);
+void createLinkList_Tail(LinkList *L, int n);
 void Traverse(LinkList L);
-Status LlDestroy(LinkList *L);
-Status ClearList(LinkList *L);
-int ListLength(LinkList L);
-void Merge_LinkedList(LinkList *La, LinkList *Lb, LinkList *Lc);
+Status destroyLinkList(LinkList *L);
+Status clearList(LinkList *L);
+int getLinkListLength(LinkList L);
+void mergeLinkList(LinkList *La, LinkList *Lb, LinkList *Lc);
 #endif

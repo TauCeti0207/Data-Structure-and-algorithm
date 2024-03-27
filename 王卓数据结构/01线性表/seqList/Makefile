@@ -1,20 +1,19 @@
 CC = gcc
 CFLAGS = -Wall -Wextra
 
-# 定义目标文件
-OBJECTS = sequenceList.o
+# Source file
+SOURCE = sequenceList.c
 
-# 默认的目标
-all: sequenceList
+# Extract the target name from the source file name
+TARGET = $(SOURCE:.c=)
 
-# 生成可执行文件
-sequenceList: $(OBJECTS)
-	$(CC) $(CFLAGS) -o sequenceList $(OBJECTS)
+# Default target
+all: $(TARGET)
 
-# 生成目标文件
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# Generate executable file
+$(TARGET):
+	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
 
-# 清理生成的文件
+# Clean generated files
 clean:
-	rm -f sequenceList $(OBJECTS)
+	del /Q $(TARGET).exe
