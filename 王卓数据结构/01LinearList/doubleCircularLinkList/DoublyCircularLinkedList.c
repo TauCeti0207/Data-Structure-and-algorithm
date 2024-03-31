@@ -1,7 +1,7 @@
 #include "DoublyCircularLinkedList.h"
 void initList(DoublyCircularLinkedList *L)
 {
-    *L = (DNode *)malloc(sizeof(DNode)); // Allocate memory for the sentinel node
+    *L = (DuLNode *)malloc(sizeof(DuLNode)); // Allocate memory for the sentinel node
     if (*L != NULL)
     {                    // Check if memory allocation was successful
         (*L)->next = *L; // Point next to itself
@@ -16,7 +16,7 @@ void printList(DoublyCircularLinkedList L)
         printf("The list is empty.\n");
         return;
     }
-    DNode *current = L->next; // 从第一个实际节点开始遍历
+    DuLNode *current = L->next; // 从第一个实际节点开始遍历
     printf("List Contents: ");
     while (current != L)
     { // 当未回到哨兵节点时继续
@@ -27,13 +27,13 @@ void printList(DoublyCircularLinkedList L)
 }
 void insertList(DoublyCircularLinkedList *L, int position, ElemType e)
 {
-    DNode *newNode = (DNode *)malloc(sizeof(DNode));
+    DuLNode *newNode = (DuLNode *)malloc(sizeof(DuLNode));
     if (newNode == NULL)
         return; // Failed to allocate memory
 
     newNode->data = e; // Assign data to the new node
 
-    DNode *current = *L;
+    DuLNode *current = *L;
     for (int i = 0; i < position; ++i)
     {
         current = current->next;
@@ -51,7 +51,7 @@ void deleteList(DoublyCircularLinkedList *L, int position, ElemType *e)
     if (*L == (*L)->next)
         return; // List is empty
 
-    DNode *current = (*L)->next; // Start from the first element
+    DuLNode *current = (*L)->next; // Start from the first element
     for (int i = 1; i < position && current != *L; ++i)
     {
         current = current->next;
@@ -67,7 +67,7 @@ void deleteList(DoublyCircularLinkedList *L, int position, ElemType *e)
 
 void destroyList(DoublyCircularLinkedList *L)
 {
-    DNode *current = (*L)->next, *temp;
+    DuLNode *current = (*L)->next, *temp;
     while (current != *L)
     {
         temp = current;
@@ -77,15 +77,18 @@ void destroyList(DoublyCircularLinkedList *L)
     free(*L);  // Free the sentinel node
     *L = NULL; // Set the list pointer to NULL
 }
-// 合并两个双向循环链表
 void mergeList(DoublyCircularLinkedList list1, DoublyCircularLinkedList list2)
 {
     if (!list1 || !list2)
         return; // 确保两个链表都不为空
 
-    DNode *tail1 = list1->prev; // 找到list1的尾节点
-    DNode *head2 = list2->next; // 跳过list2的哨兵节点，找到第一个实际节点
-    DNode *tail2 = list2->prev; // 找到list2的尾节点
+    // list1不能跳过哨兵节点 不然合并后没有哨兵节点，打印会无限循环
+    //  找到list1的尾节点
+    DuLNode *tail1 = list1->prev;
+
+    // 找到list2的第一个实际节点和尾节点（跳过哨兵节点）
+    DuLNode *head2 = list2->next;
+    DuLNode *tail2 = list2->prev;
 
     if (head2 == list2)
         return; // 如果list2为空（只有哨兵节点），则不做任何操作
@@ -94,13 +97,15 @@ void mergeList(DoublyCircularLinkedList list1, DoublyCircularLinkedList list2)
     tail1->next = head2;
     head2->prev = tail1;
 
-    // 将list2的尾部与list1的头部相连
+    // 将list2的尾部与list1的哨兵节点相连
     tail2->next = list1;
     list1->prev = tail2;
 
     // 使list2的哨兵节点成为孤立的节点，可以进一步删除或回收
     list2->next = list2->prev = list2;
+    free(list2);
 }
+
 // 测试功能的函数
 void testFunction()
 {

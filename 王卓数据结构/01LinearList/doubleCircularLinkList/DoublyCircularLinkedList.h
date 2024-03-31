@@ -6,11 +6,11 @@
 
 typedef int ElemType;
 
-typedef struct DNode
+typedef struct DuLNode
 {
     ElemType data;
-    struct DNode *prev, *next;
-} DNode, *DoublyCircularLinkedList;
+    struct DuLNode *prev, *next;
+} DuLNode, *DoublyCircularLinkedList;
 
 // 基本操作函数声明
 void initList(DoublyCircularLinkedList *L);

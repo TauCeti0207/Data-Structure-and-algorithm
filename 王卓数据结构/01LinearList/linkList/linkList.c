@@ -408,6 +408,6 @@ void testLinkedListFunctions3()
 int main()
 {
     /* code */
-    testLinkedListFunctions3();
+    testLinkedListFunctions2();
     return 0;
 }
