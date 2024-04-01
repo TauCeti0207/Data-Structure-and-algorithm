@@ -107,7 +107,7 @@ void mergeList(DoublyCircularLinkedList list1, DoublyCircularLinkedList list2)
 }
 
 // 测试功能的函数
-void testFunction()
+void testDoublyLinkListFunction()
 {
     DoublyCircularLinkedList list1, list2;
     ElemType e;
@@ -154,6 +154,6 @@ void testFunction()
 }
 int main()
 {
-    testFunction();
+    testDoublyLinkListFunction();
     return 0;
 }
