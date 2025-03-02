@@ -183,7 +183,7 @@ int SeqListFind(SeqList *pseq, SeqDataType x)
 void SeqListInsert(SeqList *pseq, size_t pos, SeqDataType x)
 {
 	// 断言确保传入的指针不为空且插入位置合法
-	assert(pseq && pos <= pseq->size);
+	assert(pseq && pos <= pseq->size && pos >= 0);
 	// 插入元素前，先检查是否需要扩容
 	SeqCheckCapacity(pseq);
 	// 将指定位置及之后的元素依次向后移动一位
@@ -191,6 +191,16 @@ void SeqListInsert(SeqList *pseq, size_t pos, SeqDataType x)
 	{
 		pseq->a[i] = pseq->a[i - 1];
 	}
+	// 这样写不可以 有坑 当顺序表为空，即 pseq->size 的值为 0 时，会执行 size_t end = pseq->size - 1; 这行代码。由于 end 被定义为 size_t 类型，它是无符号整数类型。在计算机中，无符号整数不能表示负数，当执行 0 - 1 操作时，会发生溢出。
+	// 以 32 位系统为例，无符号整数 size_t 的取值范围是 0 到 4294967295（2^32 - 1）。当 0 - 1 时，结果会变成 4294967295 这个非常大的数。
+	// 接下来，进入 while (end >= pos) 循环，由于 end 是一个极大的数，而 pos 为 0，所以 end >= pos 这个条件始终为真。并且在循环体中，每次执行 --end 操作，因为 end 是无符号类型，它不会变成负数，而是会从 4294967295 依次递减到 0，之后又会重新从 4294967295 开始，从而导致程序陷入死循环，无法正常完成插入操作。
+	/* 	size_t end = pseq->size - 1;
+		while (end >= pos)
+		{
+			pseq->a[end + 1] = pseq->a[end];
+			end--;
+		} */
+
 	// 将元素插入到指定位置
 	pseq->a[pos] = x;
 	// 插入元素后，有效数据个数加 1
