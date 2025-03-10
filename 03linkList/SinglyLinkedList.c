@@ -4,7 +4,7 @@
  * @version:
  * @Date: 2025-03-02 22:27:43
  * @LastEditors: tauceti0207
- * @LastEditTime: 2025-03-04 14:17:07
+ * @LastEditTime: 2025-03-06 17:22:38
  */
 #include "SinglyLinkedList.h"
 
@@ -14,7 +14,7 @@ SListNode *createNewNode(SListDataType data)
 	SListNode *newNode = (SListNode *)malloc(sizeof(SListNode));
 	if (newNode == NULL)
 	{
-		fprintf(stderr, "Memory allocation failed!\n");
+		fprintf_s(stderr, "Memory allocation failed!\n");
 		exit(EXIT_FAILURE);
 	}
 	newNode->data = data;
@@ -59,7 +59,7 @@ void singlyLinkedListPopFront(SListNode **pphead)
 	assert(*pphead); // 链表为空 不能头删 暴力检查
 	/* 	if (*pphead == NULL) //温柔检查
 		{
-			fprintf(stderr, "The list is empty!\n");
+			fprintf_s(stderr, "The list is empty!\n");
 			return;
 		} */
 	/* 	if ((*pphead)->next == NULL) // 只有一个节点 可以合并
@@ -133,26 +133,31 @@ void singlyLinkedListInsertBefore(SListNode **pphead, SListNode *pos, SListDataT
 	{
 		// 找到 pos 的前一个节点
 		SListNode *prev = *pphead;
-		while (prev != NULL && prev->next != pos)
+		while (prev->next != pos)
 		{
 			prev = prev->next;
 		}
 		// pre newNode pos
-		if (prev != NULL)
-		{
-			newNode->next = pos;
-			prev->next = newNode;
-		}
+		newNode->next = pos;
+		prev->next = newNode;
 	}
+}
+
+// 在指定节点之后插入元素
+void singlyLinkedListInsertAfter(SListNode *pos, SListDataType data)
+{
+	assert(pos); // pos 不能为空
+	SListNode *newNode = createNewNode(data);
+	// pos newNode pos->next
+	newNode->next = pos->next;
+	pos->next = newNode;
 }
 
 // 删除 pos 位置的元素
 void singlyLinkedListErase(SListNode **pphead, SListNode *pos)
 {
-	if (*pphead == NULL || pos == NULL)
-	{
-		return;
-	}
+	assert(pphead);
+	assert(pos);
 	// 如果要删除的是头节点
 	if (*pphead == pos)
 	{
@@ -163,16 +168,22 @@ void singlyLinkedListErase(SListNode **pphead, SListNode *pos)
 	{
 		// 找到 pos 的前一个节点
 		SListNode *prev = *pphead;
-		while (prev != NULL && prev->next != pos)
+		while (prev->next != pos)
 		{
 			prev = prev->next;
 		}
-		if (prev != NULL)
-		{
-			prev->next = pos->next;
-			free(pos);
-		}
+		// prev pos
+		prev->next = pos->next;
+		free(pos);
 	}
+}
+void singlyLinkedListEraseAfter(SListNode *pos)
+{
+	assert(pos);
+	// pos pos->next pos->next->next
+	SListNode *tail = pos->next;
+	pos->next = tail->next;
+	free(tail);
 }
 // 打印链表
 void singlyLinkedListPrint(SListNode *phead)
@@ -189,8 +200,9 @@ void singlyLinkedListPrint(SListNode *phead)
 // 销毁链表
 void singlyLinkedListDestroy(SListNode **pphead)
 {
+	assert(pphead);
 	SListNode *current = *pphead;
-	SListNode *next;
+	SListNode *next = NULL;
 	while (current != NULL)
 	{
 		next = current->next;

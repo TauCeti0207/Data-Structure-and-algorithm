@@ -4,7 +4,7 @@
  * @version:
  * @Date: 2025-03-02 22:27:43
  * @LastEditors: tauceti0207
- * @LastEditTime: 2025-03-04 14:07:22
+ * @LastEditTime: 2025-03-05 21:04:01
  */
 #pragma once
 
@@ -35,8 +35,12 @@ void singlyLinkedListPopBack(SListNode **pphead);
 SListNode *singlyLinkedListFind(SListNode *phead, SListDataType data);
 // 在指定节点之前插入元素
 void singlyLinkedListInsertBefore(SListNode **pphead, SListNode *pos, SListDataType data);
+// 在指定节点之后插入元素
+void singlyLinkedListInsertAfter(SListNode *pos, SListDataType data);
 // 删除pos位置的元素
 void singlyLinkedListErase(SListNode **pphead, SListNode *pos);
+// 删除pos位置后面的节点
+void singlyLinkedListEraseAfter(SListNode *pos);
 // 打印链表
 void singlyLinkedListPrint(SListNode *phead);
 // 销毁链表

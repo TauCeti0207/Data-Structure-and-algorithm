@@ -8,4 +8,8 @@ project(MyProject)
 set(CMAKE_C_STANDARD 11)
 
 # 添加可执行文件
-add_executable(03SinglyLinkedList SinglyLinkedList.c Test.c)
+add_executable(03SinglyLinkedList SinglyLinkedList.c test_singly_linked_list.c)
+add_executable(03OJ_test OJ_test.c)
+add_executable(03OJ_test02 OJ_test2.cpp)
+add_executable(03doubly_circular_list doubly_circular_list.c test_doubly_circular_list.c)
+
