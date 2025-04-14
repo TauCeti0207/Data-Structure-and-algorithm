@@ -4,7 +4,7 @@
  * @version:
  * @Date: 2025-04-10 21:56:11
  * @LastEditors: tauceti0207
- * @LastEditTime: 2025-04-14 12:37:28
+ * @LastEditTime: 2025-04-14 13:00:16
  */
 #include "sort.h"
 void printArray(int *arr, int len)
@@ -209,7 +209,7 @@ void test_sort_is_true()
 
 int main(int argc, char const *argv[])
 {
-	test_sort_speed();
+	// test_sort_speed();
 	// test_sort_is_true();
 	return 0;
 }
