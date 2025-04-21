@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/yzq0207/Library/CloudStorage/OneDrive-\u4e2a\u4eba/learn/programming/dataStructure/build/cmake_install.cmake",
+		"/Users/yzq0207/Library/CloudStorage/OneDrive-\u4e2a\u4eba/learn/programming/dataStructure/build/01complexity/cmake_install.cmake",
+		"/Users/yzq0207/Library/CloudStorage/OneDrive-\u4e2a\u4eba/learn/programming/dataStructure/build/02seqList/cmake_install.cmake",
+		"/Users/yzq0207/Library/CloudStorage/OneDrive-\u4e2a\u4eba/learn/programming/dataStructure/build/03linkList/cmake_install.cmake",
+		"/Users/yzq0207/Library/CloudStorage/OneDrive-\u4e2a\u4eba/learn/programming/dataStructure/build/04stack&queue/cmake_install.cmake",
+		"/Users/yzq0207/Library/CloudStorage/OneDrive-\u4e2a\u4eba/learn/programming/dataStructure/build/05Heap&BinaryTree/cmake_install.cmake",
+		"/Users/yzq0207/Library/CloudStorage/OneDrive-\u4e2a\u4eba/learn/programming/dataStructure/build/06sort_algorithm/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,2 @@
+add_subdirectory(SequenceStack)
+add_subdirectory(linkListStack)
