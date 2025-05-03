@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/06sort_algorithm/sort.c" "06sort_algorithm/CMakeFiles/06sort.dir/sort.c.o" "gcc" "06sort_algorithm/CMakeFiles/06sort.dir/sort.c.o.d"
+  "/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/06sort_algorithm/stack.c" "06sort_algorithm/CMakeFiles/06sort.dir/stack.c.o" "gcc" "06sort_algorithm/CMakeFiles/06sort.dir/stack.c.o.d"
   "/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/06sort_algorithm/test.c" "06sort_algorithm/CMakeFiles/06sort.dir/test.c.o" "gcc" "06sort_algorithm/CMakeFiles/06sort.dir/test.c.o.d"
   )
 

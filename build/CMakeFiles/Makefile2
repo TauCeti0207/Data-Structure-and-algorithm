@@ -624,12 +624,12 @@ clean: 06sort_algorithm/clean
 06sort_algorithm/CMakeFiles/06sort.dir/all:
 	$(MAKE) $(MAKESILENT) -f 06sort_algorithm/CMakeFiles/06sort.dir/build.make 06sort_algorithm/CMakeFiles/06sort.dir/depend
 	$(MAKE) $(MAKESILENT) -f 06sort_algorithm/CMakeFiles/06sort.dir/build.make 06sort_algorithm/CMakeFiles/06sort.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/CMakeFiles --progress-num=33,34,35 "Built target 06sort"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/CMakeFiles --progress-num=33,34,35,36 "Built target 06sort"
 .PHONY : 06sort_algorithm/CMakeFiles/06sort.dir/all
 
 # Build rule for subdir invocation for target.
 06sort_algorithm/CMakeFiles/06sort.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 06sort_algorithm/CMakeFiles/06sort.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/CMakeFiles 0
 .PHONY : 06sort_algorithm/CMakeFiles/06sort.dir/rule
@@ -641,7 +641,7 @@ clean: 06sort_algorithm/clean
 # codegen rule for target.
 06sort_algorithm/CMakeFiles/06sort.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f 06sort_algorithm/CMakeFiles/06sort.dir/build.make 06sort_algorithm/CMakeFiles/06sort.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/CMakeFiles --progress-num=33,34,35 "Finished codegen for target 06sort"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/CMakeFiles --progress-num=33,34,35,36 "Finished codegen for target 06sort"
 .PHONY : 06sort_algorithm/CMakeFiles/06sort.dir/codegen
 
 # clean rule for target.

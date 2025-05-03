@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "06sort.pdb"
   "CMakeFiles/06sort.dir/sort.c.o"
   "CMakeFiles/06sort.dir/sort.c.o.d"
+  "CMakeFiles/06sort.dir/stack.c.o"
+  "CMakeFiles/06sort.dir/stack.c.o.d"
   "CMakeFiles/06sort.dir/test.c.o"
   "CMakeFiles/06sort.dir/test.c.o.d"
 )

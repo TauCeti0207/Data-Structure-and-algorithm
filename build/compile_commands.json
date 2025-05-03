@@ -130,5 +130,11 @@
   "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu11 -arch arm64 -o CMakeFiles/06sort.dir/test.c.o -c /Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/06sort_algorithm/test.c",
   "file": "/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/06sort_algorithm/test.c",
   "output": "06sort_algorithm/CMakeFiles/06sort.dir/test.c.o"
+},
+{
+  "directory": "/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/build/06sort_algorithm",
+  "command": "/usr/bin/clang   -O3 -DNDEBUG -std=gnu11 -arch arm64 -o CMakeFiles/06sort.dir/stack.c.o -c /Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/06sort_algorithm/stack.c",
+  "file": "/Users/yzq0207/Library/CloudStorage/OneDrive-个人/learn/programming/dataStructure/06sort_algorithm/stack.c",
+  "output": "06sort_algorithm/CMakeFiles/06sort.dir/stack.c.o"
 }
 ]

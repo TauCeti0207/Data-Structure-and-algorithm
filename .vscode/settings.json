@@ -9,6 +9,7 @@
 		"stdio.h": "c",
 		"limits": "c",
 		"ratio": "c",
-		"algorithm": "c"
+		"algorithm": "c",
+		"dirent.h": "c"
 	}
 }
